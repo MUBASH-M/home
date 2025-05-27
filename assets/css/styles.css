@@ -1,17 +1,19 @@
 /*===== EXPERIENCE TIMELINE =====*/
+/*===== EXPERIENCE TIMELINE (ALTERNATING) =====*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 .experience .timeline {
   position: relative;
   margin: 2rem auto;
-  padding: 2rem 0 2rem 2rem;
-  max-width: 700px;
+  padding: 2rem 0;
+  max-width: 900px;
 }
 
 .timeline::before {
   content: "";
   position: absolute;
-  left: 25px;
+  left: 50%;
   top: 0;
+  transform: translateX(-50%);
   width: 4px;
   height: 100%;
   background: var(--first-color);
@@ -20,20 +22,38 @@
 
 .timeline-item {
   position: relative;
-  margin-bottom: 2.5rem;
-  padding-left: 60px;
+  width: 50%;
+  padding: 1.5rem 2rem;
+  box-sizing: border-box;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
 }
 
 .timeline-dot {
   position: absolute;
-  left: 15px;
-  top: 0.5rem;
+  top: 1.5rem;
   width: 20px;
   height: 20px;
   background: #fff;
   border: 4px solid var(--first-color);
   border-radius: 50%;
   z-index: 1;
+}
+
+.timeline-item.left .timeline-dot {
+  right: -10px;
+}
+
+.timeline-item.right .timeline-dot {
+  left: -10px;
 }
 
 .timeline-date {
@@ -48,6 +68,16 @@
   padding: 1rem 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  display: inline-block;
+  max-width: 90%;
+}
+
+.timeline-item.left .timeline-content {
+  margin-right: 40px;
+}
+
+.timeline-item.right .timeline-content {
+  margin-left: 40px;
 }
 
 .timeline-content h3 {
@@ -69,21 +99,40 @@
   color: var(--second-color);
 }
 
-@media screen and (max-width: 600px) {
-  .experience .timeline {
-    padding-left: 1rem;
-  }
+@media screen and (max-width: 900px) {
   .timeline-item {
+    padding: 1rem 0.5rem;
+  }
+  .timeline-content {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .experience .timeline {
+    padding: 1rem 0;
+  }
+  .timeline::before {
+    left: 20px;
+    transform: none;
+  }
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    width: 100%;
+    left: 0;
+    text-align: left;
     padding-left: 40px;
+    padding-right: 0;
   }
   .timeline-dot {
-    left: 5px;
+    left: 10px !important;
+    right: auto !important;
     width: 14px;
     height: 14px;
   }
-  .timeline::before {
-    left: 11px;
-    width: 2px;
+  .timeline-content {
+    margin: 0 0 0 30px !important;
+    max-width: 90%;
   }
 }
 /*===== GOOGLE FONTS =====*/
