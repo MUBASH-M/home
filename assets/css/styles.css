@@ -18,9 +18,9 @@
   background: #181818;
   color: #00ff90;
   font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
-  font-size: 1.4rem;
+  font-size: 2.2rem;
   border-radius: 8px;
-  padding: 2rem 2.5rem;
+  padding: 2.5rem 3rem;
   box-shadow: 0 2px 16px rgba(0,0,0,0.12);
   margin-bottom: 1.2rem;
   min-width: 260px;
@@ -44,8 +44,8 @@
     max-width: 100vw;
   }
   .home-coding__block {
-    font-size: 1.1rem;
-    padding: 1.2rem 1rem;
+    font-size: 2rem;
+    padding: 2rem 2.5rem;
   }
   .home__social--code {
     gap: 0.7rem;
