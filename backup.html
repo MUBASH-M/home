@@ -92,23 +92,35 @@
                         <a href="https://x.com/Mubash_aka_Hash" class="home__social-icon" target="_blank" rel="noopener"><i class='bx bxl-twitter' ></i></a>
                     </div>
                 </div>
-                <div class="home-coding__right" style="display:flex;align-items:center;justify-content:center;min-width:140px;padding-left:2vw;">
-                    
-                </div>
             </section>
             <script>
-            // Animated typing effect for code block
+            // Animated typing effect for code block with blinking _ cursor
             const codeText = `Hi,\nI'am Mubash M\nData Engineer`;
             const codeTyping = document.getElementById('code-typing');
             let i = 0;
+            let typingDone = false;
             function typeCode() {
-                if (i < codeText.length) {
-                    codeTyping.innerHTML += codeText.charAt(i) === '\n' ? '<br>' : codeText.charAt(i);
+                if (i <= codeText.length) {
+                    let display = codeText.substring(0, i).replace(/\n/g, '<br>');
+                    codeTyping.innerHTML = display + '<span class="cursor">_</span>';
                     i++;
                     setTimeout(typeCode, 80);
+                } else {
+                    typingDone = true;
+                    blinkCursor();
                 }
             }
+            function blinkCursor() {
+                const cursor = codeTyping.querySelector('.cursor');
+                if (!cursor) return;
+                cursor.style.visibility = (cursor.style.visibility === 'hidden') ? 'visible' : 'hidden';
+                if (typingDone) setTimeout(blinkCursor, 500);
+            }
             if (codeTyping) typeCode();
+            // Optional: Add some CSS for the cursor
+            const style = document.createElement('style');
+            style.innerHTML = `.cursor { display: inline-block; width: 1ch; animation: none; }`;
+            document.head.appendChild(style);
             </script>
         
             <!--===== ABOUT =====-->
