@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
         aboutToggle.addEventListener('click', function() {
             if (aboutMore.style.display === 'none') {
                 aboutMore.style.display = 'inline';
-                aboutToggle.textContent = 'Show less';
+                aboutToggle.textContent = ' Show less';
             } else {
                 aboutMore.style.display = 'none';
-                aboutToggle.textContent = 'Show more';
+                aboutToggle.textContent = ' Show more';
             }
         });
     }
