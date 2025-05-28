@@ -117,35 +117,6 @@
                 if (typingDone) setTimeout(blinkCursor, 500);
             }
             if (codeTyping) typeCode();
-            // Optional: Add some CSS for the cursor
-            // Animated typing effect for about section
-            const aboutText = "I'am Mubash M";
-            const aboutTyping = document.getElementById('about-typing');
-            let j = 0;
-            let aboutTypingDone = false;
-            function typeAbout() {
-                if (j <= aboutText.length) {
-                    let display = aboutText.substring(0, j);
-                    aboutTyping.innerHTML = display + '<span class="cursor">_</span>';
-                    j++;
-                    setTimeout(typeAbout, 80);
-                } else {
-                    aboutTypingDone = true;
-                    blinkAboutCursor();
-                    // Show about text after typing
-                    document.getElementById('about-text').style.display = '';
-                }
-            }
-            function blinkAboutCursor() {
-                const cursor = aboutTyping.querySelector('.cursor');
-                if (!cursor) return;
-                cursor.style.visibility = (cursor.style.visibility === 'hidden') ? 'visible' : 'hidden';
-                if (aboutTypingDone) setTimeout(blinkAboutCursor, 500);
-            }
-            if (aboutTyping) typeAbout();
-            const style = document.createElement('style');
-            style.innerHTML = `.cursor { display: inline-block; width: 1ch; animation: none; }`;
-            document.head.appendChild(style);
             </script>
         
             <!--===== ABOUT =====-->
@@ -158,10 +129,8 @@
                     </div>
                     
                     <div>
-                        <h2 class="about__subtitle">
-                            <span id="about-typing" style="font-size:2rem; font-family:'Fira Mono','Consolas','Menlo',monospace;"></span>
-                        </h2>
-                        <p class="about__text" id="about-text" style="display:none;">
+                        <h2 class="about__subtitle">I'am Mubash M</h2>
+                        <p class="about__text">
                             I'm a Data Engineer specializing in production support, with hands-on experience across Microsoft Azure, SQL Server, SSIS, .NET, and modern data engineering tools like Databricks, Data Lake, PySpark, Python, and Pandas.
                             <br><br>
                             I focus on maintaining data accuracy, resolving real-time system issues and ensuring high availability for business-critical applications. My day-to-day involves analyzing job failures, fixing application and data-level issues, optimizing SQL performance, and collaborating with cross-functional teams to deliver stable and scalable systems.
