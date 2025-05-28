@@ -1,3 +1,19 @@
+// Show more/less for About section
+document.addEventListener('DOMContentLoaded', function() {
+    var aboutToggle = document.getElementById('about-toggle');
+    var aboutMore = document.getElementById('about-more');
+    if (aboutToggle && aboutMore) {
+        aboutToggle.addEventListener('click', function() {
+            if (aboutMore.style.display === 'none') {
+                aboutMore.style.display = 'inline';
+                aboutToggle.textContent = 'Show less';
+            } else {
+                aboutMore.style.display = 'none';
+                aboutToggle.textContent = 'Show more';
+            }
+        });
+    }
+});
 /*===== MENU SHOW =====*/ 
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),
