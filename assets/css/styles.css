@@ -1,3 +1,27 @@
+/* Skills Blocks */
+.skills-blocks-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.skills-block {
+  background: #fff;
+  border: 2px solid var(--first-color);
+  color: var(--first-color);
+  border-radius: 1rem;
+  padding: 2rem 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: background 0.2s, color 0.2s;
+}
+.skills-block:hover {
+  background: var(--first-color);
+  color: #fff;
+}
 /*===== EXPERIENCE TIMELINE =====*/
 /*===== EXPERIENCE TIMELINE (ALTERNATING) =====*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
@@ -350,7 +374,8 @@ img {
   width: 260px;
 }
 .home__blob {
-  fill: var(--first-color);
+  /* fill: var(--first-color); */
+  fill: none;
 }
 .home__blob-img {
   width: 360px;
